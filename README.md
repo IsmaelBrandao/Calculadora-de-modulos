@@ -14,17 +14,19 @@ Este projeto oferece uma interface intuitiva e responsiva para que estudantes, p
 
 ## 🌐 Acesse o site
 
-➡️ [**calculadora-modulos.vercel.app**](https://calculadora-modulos.vercel.app)
+➡️ [**calculadora-de-modulos-0ebs.onrender.com**](https://calculadora-de-modulos-0ebs.onrender.com)
+
+A aplicação está hospedada gratuitamente na plataforma **Render**, que permite a execução de aplicações Python com suporte a frameworks como o Flask.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- 🧩 Cálculo automático de **União (∪)** e **Interseção (∩)** de conjuntos
-- 🔁 Aplicação prática das **Leis de De Morgan**
-- 🔄 Operações compostas: **(A ∪ B) ∩ C**, **(A ∩ B) ∪ C**, etc.
-- 🧠 Interpretação e visualização de resultados
-- 🌙 Modo escuro e design responsivo (opcional, se aplicável)
+- 🧩 Cálculo automático de **União (∪)** e **Interseção (∩)** de conjuntos  
+- 🔁 Aplicação prática das **Leis de De Morgan**  
+- 🔄 Operações compostas: **(A ∪ B) ∩ C**, **(A ∩ B) ∪ C**, etc.  
+- 🧠 Interpretação e visualização de resultados  
+- 🌙 Modo escuro e design responsivo *(se aplicável)*  
 
 ---
 
@@ -45,6 +47,3 @@ Este projeto oferece uma interface intuitiva e responsiva para que estudantes, p
 Contribuições são bem-vindas! Se quiser colaborar com melhorias, correções ou novas funcionalidades, sinta-se à vontade para fazer um fork ou abrir uma issue.
 
 ---
-
-
-
