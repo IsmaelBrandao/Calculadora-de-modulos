@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Módulos</title>
+  <!-- Importa a fonte Montserrat do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+</head>
+<body>
+  <!-- Cabeçalho com Título Estilizado -->
+  <header class="header-title">
+    <h1>Calculadora de Módulos</h1>
+  </header>
+
+  <main>
+    <!-- Container de Listas (acima) -->
+    <section id="lista-container" class="lista-container">
+      <!-- As listas serão adicionadas aqui dinamicamente -->
+    </section>
+
+    <!-- Painel de Resultado -->
+    <section id="resultado">
+      <!-- Exibição do resultado -->
+    </section>
+
+    <!-- Bloco de Botões de Controle Centralizados -->
+    <section class="control-buttons">
+      <div class="button-group">
+        <button type="button" id="salvar-listas">Salvar Listas</button>
+        <button type="button" id="resetar-tudo">Resetar</button>
+        <div class="dropdown">
+          <button type="button" class="dropbtn">Fórmulas</button>
+          <div class="dropdown-conteudo">
+            <button type="button" id="calcular-intersecao">Calcular Interseção</button>
+            <button type="button" id="calcular-uniao">Calcular União</button>
+            <button type="button" id="calcular-lei-de-morgan">Calcular Lei de Morgan</button>
+            <button type="button" id="calcular-distributividade-interseccao">Distributividade (∩ sobre ∪)</button>
+            <button type="button" id="calcular-distributividade-uniao">Distributividade (∪ sobre ∩)</button>
+          </div>
+        </div>
+        <button type="button" id="adicionar-lista">Adicionar Lista</button>
+      </div>
+    </section>
+
+    <!-- Feedback da Mensagem -->
+    <section id="mensagem">
+      <!-- Mensagens de feedback serão exibidas aqui -->
+    </section>
+  </main>
+
+  <!-- Modal para Definir o Conjunto Universo -->
+  <div id="modal-universo" class="modal">
+    <div class="modal-conteudo">
+      <button type="button" class="fechar-modal">&times;</button>
+      <h2>Definir Conjunto Universo</h2>
+      <p>
+        Insira os elementos do conjunto universo separados por vírgula (ex: 1,2,3,4,5,6).<br>
+        Caso não seja informado, será utilizada a união das listas como conjunto universo.
+      </p>
+      <input type="text" id="input-universo" placeholder="Ex: 1,2,3,4,5,6">
+      <button type="button" id="confirmar-universo">Confirmar</button>
+    </div>
+  </div>
+
+  <!-- Rodapé com a mini mensagem -->
+  <footer class="footer">
+    <p>Desenvolvido por Ismael Brandão</p>
+  </footer>
+</body>
+</html>

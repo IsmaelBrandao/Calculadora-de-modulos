@@ -1,0 +1,295 @@
+:root {
+  --primary-color: #3498db;
+  --primary-color-dark: #2980b9;
+  --text-color: #ecf0f1;
+  --card-bg: rgba(44, 62, 80, 0.9);
+  --panel-bg: rgba(44, 62, 80, 0.7);
+  --feedback-bg: transparent; /* Fundo padrão para feedback */
+  --success-bg: rgba(39, 174, 96, 0.9);   /* Fundo verde para sucesso */
+  --success-border: #27ae60;
+  --success-text: #ecf0f1;
+  --error-bg: rgba(231, 76, 60, 0.9);      /* Fundo vermelho para erro */
+  --error-border: #c0392b;
+  --error-text: #ecf0f1;
+  --modal-bg-overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* Corpo da Página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: var(--text-color);
+}
+
+/* Cabeçalho com Título Estilizado */
+.header-title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.header-title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5em;
+  margin: 0;
+  color: var(--text-color);
+}
+
+/* Main */
+main {
+  padding: 20px;
+}
+
+/* Container de Listas (acima) */
+.lista-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centraliza as listas */
+  margin-bottom: 20px;
+  background-color: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Painel de Resultado */
+#resultado {
+  text-align: center;
+  margin: 0 auto 20px;
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: 1px solid var(--primary-color-dark);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+/* Bloco de Botões de Controle Centralizados */
+.control-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-group button,
+.button-group .dropbtn {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-group button:hover,
+.button-group .dropbtn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* Dropdown dentro do grupo de botões */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-conteudo {
+  display: none;
+  position: absolute;
+  background-color: var(--panel-bg);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-conteudo button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  background-color: var(--panel-bg);
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.dropdown-conteudo button:hover {
+  background-color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-conteudo {
+  display: block;
+}
+
+/* Feedback da Mensagem */
+#mensagem {
+  margin: 0 auto 20px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 4px;
+  display: none;
+  width: 80%;
+  max-width: 600px;
+  /* O fundo do feedback virá das classes .sucesso ou .erro */
+}
+
+/* Classes para Feedback */
+#mensagem.sucesso {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-border);
+}
+
+#mensagem.erro {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid var(--error-border);
+}
+
+/* Cartões de Lista */
+.lista-card {
+  border: 1px solid var(--primary-color-dark);
+  border-radius: 8px;
+  padding: 15px;
+  width: 240px;
+  background-color: var(--panel-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-card .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lista-card .header input[type="text"] {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: #fff;
+  color: #000;
+}
+
+.lista-card .header .icons {
+  display: flex;
+  gap: 5px;
+}
+
+.lista-card .header .icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  transition: opacity 0.3s ease;
+  color: var(--text-color);
+}
+
+.lista-card .header .icons button:hover {
+  opacity: 0.7;
+}
+
+.lista-card textarea {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-bg-overlay);
+  overflow: auto;
+}
+
+.modal-conteudo {
+  background-color: var(--panel-bg);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--primary-color-dark);
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.fechar-modal {
+  color: var(--text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+#input-universo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+}
+
+#confirmar-universo {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#confirmar-universo:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* Rodapé com a mini mensagem */
+.footer {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 20px;
+  color: var(--text-color);
+}
